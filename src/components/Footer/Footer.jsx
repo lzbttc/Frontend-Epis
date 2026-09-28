@@ -1,23 +1,30 @@
 import './Footer.css'
 
-function Footer({
-  version = '1.0.0',
-  campus = 'Campus Universitário',
-}) {
+function Footer() {
   return (
     <footer className="footer">
-      <nav className="footer-links" aria-label="Links institucionais">
-        <a href="/termos-de-uso">Termos de Uso</a>
-        <a href="/politica-de-privacidade">Política de Privacidade</a>
-        <a href="/central-de-ajuda">Central de Ajuda</a>
-      </nav>
+      <div className="footer__container">
+        <div className="footer__links">
+          <a href="#termos" className="footer__link">
+            Termos de Uso
+          </a>
+          <span className="footer__dot">•</span>
+          <a href="#privacidade" className="footer__link">
+            Política de Privacidade
+          </a>
+          <span className="footer__dot">•</span>
+          <a href="#ajuda" className="footer__link">
+            Central de Ajuda
+          </a>
+        </div>
 
-      <div className="footer-info">
-        <span>Epis</span>
-        <span aria-hidden="true">•</span>
-        <span>{version}</span>
-        <span aria-hidden="true">•</span>
-        <span>{campus}</span>
+        <div className="footer__info">
+          <span className="footer__brand">Epis</span>
+          <span className="footer__dot">•</span>
+          <span className="footer__version">v1.0.0</span>
+          <span className="footer__dot">•</span>
+          <span className="footer__campus">Campus Universitário</span>
+        </div>
       </div>
     </footer>
   )
