@@ -2,15 +2,6 @@ import logo from '../../assets/logo.svg'
 import './Header.css'
 
 function Header({ student }) {
-  const getInitials = (name) => {
-    if (!name) return 'U'
-    const parts = name.split(' ')
-    if (parts.length >= 2) {
-      return `${parts[0][0]}${parts[1][0]}`
-    }
-    return parts[0][0]
-  }
-
   return (
     <header className="header">
       <div className="header__container">
@@ -46,8 +37,8 @@ function Header({ student }) {
 
           <button
             className="header__icon-btn"
-            title="Configurações"
-            aria-label="Configurações"
+            title="Ajuda"
+            aria-label="Ajuda"
           >
             <svg
               width="20"
@@ -59,19 +50,57 @@ function Header({ student }) {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <circle cx="12" cy="12" r="3" />
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg>
           </button>
 
-          <div className="header__user-profile">
-            <div className="header__avatar">{getInitials(student.name)}</div>
+          <div
+            className="header__user-profile"
+            role="button"
+            tabIndex={0}
+            title="Perfil do Usuário"
+          >
+            <div className="header__avatar">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
             <div className="header__user-info">
               <span className="header__user-name">{student.name}</span>
-              <span className="header__user-sub">
-                Matrícula: {student.matricula}
-              </span>
+              <span className="header__user-sub">{student.matricula}</span>
             </div>
+            <button
+              className="header__profile-shortcut"
+              aria-label="Atalho do perfil"
+            >
+              <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="#71717A"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

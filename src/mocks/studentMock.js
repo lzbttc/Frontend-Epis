@@ -14,21 +14,21 @@ export const studentMock = {
       value: '8,4',
       percentage: 84,
       label: 'MÉDIA GERAL',
-      color: '#1d4ed8',
+      color: '#3b82f6',
     },
     {
       id: 'frequencia',
       value: '94%',
       percentage: 94,
       label: 'FREQUÊNCIA',
-      color: '#10b981',
+      color: '#3b82f6',
     },
     {
       id: 'atividades',
       value: '100h',
       percentage: 83,
       label: 'ATIVIDADES C.',
-      color: '#8b5cf6',
+      color: '#3b82f6',
     },
   ],
   disciplines: [
@@ -99,7 +99,7 @@ export const studentMock = {
     {
       id: 'qa1',
       title: 'Solicitar matrícula',
-      description: 'Ajuste e inclusão de disciplinas do semestre',
+      description: 'Ajuste e trancamento',
       icon: 'academic',
     },
     {
@@ -111,7 +111,7 @@ export const studentMock = {
     {
       id: 'qa3',
       title: 'Coordenação',
-      description: 'Canal direto e dúvidas com o curso',
+      description: 'Canal direto e dúvidas',
       icon: 'message',
     },
     {

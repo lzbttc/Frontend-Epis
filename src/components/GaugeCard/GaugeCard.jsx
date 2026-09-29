@@ -1,8 +1,8 @@
 import './GaugeCard.css'
 
-function GaugeCard({ value, label, percentage = 85, color = '#1d4ed8' }) {
-  const radius = 36
-  const stroke = 7
+function GaugeCard({ value, label, percentage = 85, color = '#3b82f6' }) {
+  const radius = 50
+  const stroke = 10
   const normalizedRadius = radius - stroke * 0.5
   const circumference = normalizedRadius * 2 * Math.PI
   const strokeDashoffset = circumference - (percentage / 100) * circumference
@@ -12,7 +12,7 @@ function GaugeCard({ value, label, percentage = 85, color = '#1d4ed8' }) {
       <div className="gauge-card__visual">
         <svg height={radius * 2} width={radius * 2} className="gauge-card__svg">
           <circle
-            stroke="#e2e8f0"
+            stroke="#F5F2EA"
             fill="transparent"
             strokeWidth={stroke}
             r={normalizedRadius}
@@ -34,9 +34,9 @@ function GaugeCard({ value, label, percentage = 85, color = '#1d4ed8' }) {
         </svg>
         <div className="gauge-card__value-wrapper">
           <span className="gauge-card__value">{value}</span>
+          <span className="gauge-card__label">{label}</span>
         </div>
       </div>
-      <span className="gauge-card__label">{label}</span>
     </div>
   )
 }

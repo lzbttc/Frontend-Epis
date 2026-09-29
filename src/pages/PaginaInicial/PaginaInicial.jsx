@@ -1,5 +1,4 @@
 import GaugeCard from '../../components/GaugeCard/GaugeCard'
-import DisciplineCard from '../../components/DisciplineCard/DisciplineCard'
 import EventCard from '../../components/EventCard/EventCard'
 import QuickActionCard from '../../components/QuickActionCard/QuickActionCard'
 import NewsCard from '../../components/NewsCard/NewsCard'
@@ -11,7 +10,6 @@ function PaginaInicial() {
   const {
     student,
     metrics,
-    disciplines,
     upcomingEvents,
     quickActions,
     latestNews,
@@ -47,25 +45,31 @@ function PaginaInicial() {
 
       {/* 2. Minhas Disciplinas Section */}
       <section className="pagina-inicial__section">
-        <header className="pagina-inicial__section-header">
+        <header className="pagina-inicial__disciplines-header">
           <div>
-            <h2 className="pagina-inicial__section-title">
+            <h2 className="pagina-inicial__disciplines-title">
               Minhas Disciplinas
             </h2>
-            <p className="pagina-inicial__section-subtitle">
+            <p className="pagina-inicial__disciplines-subtitle">
               Acompanhamento e acesso ao conteúdo das turmas virtuais
             </p>
           </div>
-          <Button variant="outline" size="sm">
-            Ver todas
-          </Button>
+          <a href="#" className="pagina-inicial__ver-todas-link">
+            <span>Ver todas</span>
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.117 6H0V4.667H8.117L4.383 0.933L5.333 0L10.667 5.333L5.333 10.667L4.383 9.733L8.117 6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
         </header>
-
-        <div className="pagina-inicial__disciplines-grid">
-          {disciplines.map((discipline) => (
-            <DisciplineCard key={discipline.id} discipline={discipline} />
-          ))}
-        </div>
       </section>
 
       {/* 3. Compromissos & Acesso Rápido (2-Column Grid) */}
@@ -106,7 +110,7 @@ function PaginaInicial() {
           </header>
 
           <div className="pagina-inicial__events-list">
-            {upcomingEvents.map((event) => (
+            {upcomingEvents.slice(0, 1).map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
@@ -142,25 +146,43 @@ function PaginaInicial() {
           </header>
 
           <div className="pagina-inicial__actions-grid">
-            {quickActions.map((action) => (
-              <QuickActionCard key={action.id} action={action} />
-            ))}
+            {quickActions
+              .filter(
+                (action) =>
+                  action.title === 'Solicitar matrícula' ||
+                  action.title === 'Coordenação'
+              )
+              .map((action) => (
+                <QuickActionCard key={action.id} action={action} />
+              ))}
           </div>
         </section>
       </div>
 
       {/* 4. Últimas Notícias Section */}
-      <section className="pagina-inicial__section">
-        <header className="pagina-inicial__section-header">
+      <section className="pagina-inicial__noticias-card">
+        <header className="pagina-inicial__noticias-header">
           <div>
-            <h2 className="pagina-inicial__section-title">Últimas notícias</h2>
-            <p className="pagina-inicial__section-subtitle">
+            <h2 className="pagina-inicial__noticias-title">Últimas notícias</h2>
+            <p className="pagina-inicial__noticias-subtitle">
               Comunicados da coordenação e pró-reitoria
             </p>
           </div>
-          <Button variant="ghost" size="sm">
-            Ver todos
-          </Button>
+          <a href="#" className="pagina-inicial__ver-todos-link">
+            <span>Ver todos</span>
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.117 6H0V4.667H8.117L4.383 0.933L5.333 0L10.667 5.333L5.333 10.667L4.383 9.733L8.117 6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
         </header>
 
         <div className="pagina-inicial__news-list">
