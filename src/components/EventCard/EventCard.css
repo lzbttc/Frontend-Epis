@@ -1,0 +1,119 @@
+.event-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.event-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #1d4ed8;
+  border-radius: 12px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.event-card__day {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.event-card__month {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.event-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-card__title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #090d16;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card__topic {
+  font-size: 0.8125rem;
+  color: #71717a;
+  margin: 0 0 6px 0;
+}
+
+.event-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+.event-card__time,
+.event-card__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.event-card__bullet {
+  color: #cbd5e1;
+}
+
+.event-card__action {
+  flex-shrink: 0;
+}
+
+.event-card__btn-dark {
+  background-color: #090d16;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-card__btn-dark:hover {
+  background-color: #1e293b;
+}
+
+@media (max-width: 640px) {
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-card__action {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .event-card__btn-dark {
+    width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+.quick-action-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f5f2ea;
+  border-radius: 12px;
+  padding: 16px;
+  text-decoration: none;
+  min-height: 126px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.quick-action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.quick-action-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #090d16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.quick-action-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quick-action-card__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #090d16;
+  line-height: 1.25;
+}
+
+.quick-action-card__description {
+  font-size: 0.75rem;
+  color: #71717a;
+  line-height: 1.3;
+}

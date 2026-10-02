@@ -1,150 +1,144 @@
 .header {
-  width: 100%;
-  height: 80px;
-  padding: 0 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
 
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: var(--color-background);
 }
 
-.header-brand {
+.header__brand {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
-.header-brand-icon {
-  width: 52px;
-  height: auto;
-  flex-shrink: 0;
+.header__logo {
+  height: 40px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
 }
 
-.header-brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-}
-
-.header-brand-name {
-  color: var(--color-text);
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: -0.2px;
-}
-
-.header-brand-subtitle {
-  color: var(--color-text);
-  font-size: 7px;
-  font-weight: 500;
-  line-height: 7px;
-}
-
-.header-actions {
+.header__actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.header-icon-button {
+.header__icon-btn {
   position: relative;
-
-  width: 32px;
-  height: 32px;
-  padding: 0;
-
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #475569;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: none;
-  border-radius: var(--radius-full);
-
-  background-color: transparent;
-
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.header-icon-button:hover {
-  background-color: var(--color-surface-soft);
+.header__icon-btn:hover {
+  background-color: #f8fafc;
+  color: #1d4ed8;
+  border-color: #cbd5e1;
 }
 
-.header-icon-button svg {
-  display: block;
-  flex-shrink: 0;
-}
-
-.header-notification-indicator {
+.header__badge-dot {
   position: absolute;
-  top: 5px;
+  top: 6px;
   right: 6px;
-
-  width: 8px;
-  height: 8px;
-
-  border: 1px solid var(--color-background);
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-
-  background-color: var(--color-primary-dark);
+  background-color: #1d4ed8;
+  border: 1.5px solid #ffffff;
 }
 
-.header-profile {
+.header__user-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  padding: 0 0 0 4px;
-
-  border: none;
-  background-color: transparent;
-
-  color: var(--color-text);
-  text-align: left;
-
+  gap: 12px;
+  padding-left: 12px;
+  border-left: 1px solid #e2e8f0;
   cursor: pointer;
+  user-select: none;
 }
 
-.header-profile svg {
-  display: block;
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #090d16;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.header-user-info {
+.header__user-info {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-
-  min-width: 0;
+  gap: 2px;
 }
 
-.header-user-name {
-  color: var(--color-text);
-  font-size: 14px;
+.header__user-name {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 18px;
+  color: #090d16;
+  line-height: 1.2;
 }
 
-.header-user-registration {
-  color: var(--color-text-secondary);
-  font-size: 12px;
+.header__user-sub {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 16px;
+  color: #71717a;
+  line-height: 1.2;
 }
 
-@media (max-width: 700px) {
-  .header {
-    padding: 0 20px;
-  }
+.header__profile-shortcut {
+  background: transparent;
+  border: none;
+  padding: 4px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
 
-  .header-user-info {
+.header__user-profile:hover .header__profile-shortcut svg path {
+  stroke: #090d16;
+}
+
+.header__user-profile:hover .header__profile-shortcut {
+  transform: translateY(2px);
+}
+
+@media (max-width: 640px) {
+  .header__user-info,
+  .header__profile-shortcut {
     display: none;
   }
 
-  .header-actions {
-    gap: 8px;
+  .header__logo {
+    height: 32px;
   }
 }
