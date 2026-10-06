@@ -71,8 +71,6 @@ EPIS/
 
 O diretório `node_modules/` existe localmente, mas não faz parte do código versionado do projeto.
 
-As pastas `components`, `layouts`, `mocks`, `pages` e `routes` possuem inicialmente arquivos `.gitkeep` para que permaneçam no repositório enquanto ainda não possuem outros arquivos.
-
 ---
 
 # 4. Organização da pasta `src`
